@@ -3,7 +3,7 @@
 
 ## Description：
 
-   Dynamically set your IP in the project
+   Dynamically set your IP in the project.
 
 ## To get a Git project into your build:
 
@@ -23,3 +23,30 @@
 	   compile 'com.github.Rickwan:IPManagerUtils:V1.0.0'
 	}
 ```
+------
+> 分割线----装逼失败  
+
+## 使用方法：
+ - 设置IP：
+ ``` 
+Intent intent = new Intent(this, MBIPActivity.class);
+startActivityForResult(intent, MBIPContant.REQUEST_CODE);
+```
+
+- 获取IP：
+
+返回示例：192.168.1.33:8080  
+
+
+    - 方法1：获取IP  
+    
+    ```
+    MBIPUtils.getInstance(context).getIPPort();
+
+    ```
+
+    - 方法2：
+    当未设置IP时，可传入默认IP
+    ```
+     MBIPUtils.getInstance(context).getIPPort(defeaultIP,defeaultPort);
+    ```
