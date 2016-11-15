@@ -42,7 +42,8 @@ startActivityForResult(intent, MBIPContant.REQUEST_CODE);
     MBIPUtils.getInstance(context).getIPPort();
     ```
   - 方法2：
-    当未设置IP时，可传入默认IP
+    当未设置IP时，可传入默认IP  
+    
     ```
      MBIPUtils.getInstance(context).getIPPort(defeaultIP,defeaultPort);
     ```
