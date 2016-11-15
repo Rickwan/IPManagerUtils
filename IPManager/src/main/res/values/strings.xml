@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">IP配置器</string>
+
+    <string name="mb_empty_ip">IP不能为空</string>
+    <string name="mb_empty_port">端口不能为空</string>
+    <string name="mb_insert">添加</string>
+    <string name="mb_edit">编辑</string>
+    <string name="mb_delete">删除</string>
+    <string name="mb_cancel">取消</string>
+    <string name="mb_submit">确定</string>
+    <string name="mb_alert_title">确定删除此条记录？</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mb_bg">#f7f7f7</color>
+    <color name="mb_white">#ffffff</color>
+    <color name="mb_green">#01bf71</color>
+    <color name="mb_gray">#333333</color>
+    <color name="mb_sub_gray">#666666</color>
+    <color name="mb_line">#cccccc</color>
+    <color name="mb_title_bg">#263238</color>
+</resources>
