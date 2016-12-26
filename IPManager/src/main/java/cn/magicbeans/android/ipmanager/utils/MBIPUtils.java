@@ -37,11 +37,10 @@ public class MBIPUtils {
      */
     public void insertIPPort(MBIPInfo info) {
 
-
-//        MBIPInfo defeault = ipDao.queryDefeaultIPInfo();
-//        if (defeault == null) {
-//            info.isDefeault = 1;
-//        }
+        MBIPInfo defeault = ipDao.queryDefeaultIPInfo();
+        if (defeault == null) {
+            info.isDefeault = 1;
+        }
         ipDao.insert(info);
 
     }
