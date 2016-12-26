@@ -3,7 +3,7 @@
 
 ## Description：
 
-   Dynamically set your IP in the project.
+    Setting your IP dynamically in the project.
 
 ## To get a Git project into your build:
 
