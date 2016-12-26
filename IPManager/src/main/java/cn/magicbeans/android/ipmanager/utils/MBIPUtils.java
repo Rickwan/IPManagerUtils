@@ -1,6 +1,7 @@
 package cn.magicbeans.android.ipmanager.utils;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import java.util.List;
 
@@ -36,6 +37,11 @@ public class MBIPUtils {
      */
     public void insertIPPort(MBIPInfo info) {
 
+
+//        MBIPInfo defeault = ipDao.queryDefeaultIPInfo();
+//        if (defeault == null) {
+//            info.isDefeault = 1;
+//        }
         ipDao.insert(info);
 
     }
@@ -46,7 +52,12 @@ public class MBIPUtils {
      * @param info
      */
     public void setDefeaultIPPort(MBIPInfo info) {
-        MBIPInfo defeault = ipDao.gueryDefeaultIPInfo();
+
+        if (info.isDefeault == 1) {
+            return;
+        }
+
+        MBIPInfo defeault = ipDao.queryDefeaultIPInfo();
         if (defeault != null) {
             ipDao.changeState(defeault);
         }
@@ -68,12 +79,13 @@ public class MBIPUtils {
      *
      * @param info
      */
-    public void updateIPPort(MBIPInfo oldinfo,MBIPInfo info) {
+    public void updateIPPort(MBIPInfo oldinfo, MBIPInfo info) {
         ipDao.update(oldinfo, info);
     }
 
     /**
      * 查询所有数据
+     *
      * @return
      */
     public List<MBIPInfo> queryData() {
@@ -88,7 +100,7 @@ public class MBIPUtils {
      */
     public String getIPPort(String defeaultIP, String defeaultPort) {
 
-        MBIPInfo info = ipDao.gueryDefeaultIPInfo();
+        MBIPInfo info = ipDao.queryDefeaultIPInfo();
         if (info == null) {
             return defeaultIP + ":" + defeaultPort;
         }
@@ -97,10 +109,11 @@ public class MBIPUtils {
 
     /**
      * 获取默认IP，不传默认值
+     *
      * @return
      */
-    public String getIPPort(){
-        MBIPInfo info = ipDao.gueryDefeaultIPInfo();
+    public String getIPPort() {
+        MBIPInfo info = ipDao.queryDefeaultIPInfo();
         if (info == null) {
             return null;
         }

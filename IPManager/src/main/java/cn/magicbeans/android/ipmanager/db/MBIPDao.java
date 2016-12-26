@@ -118,7 +118,7 @@ public class MBIPDao {
      *
      * @return
      */
-    public MBIPInfo gueryDefeaultIPInfo() {
+    public MBIPInfo queryDefeaultIPInfo() {
         MBIPInfo info = null;
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from " + MBIPContant.TABLE_NAME, null);

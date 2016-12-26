@@ -91,7 +91,7 @@ public class MBIPAdapter extends BaseAdapter {
 
         public void init(MBIPInfo info) {
             this.info = info;
-            ipView.setText(info.ip+(info.isDefeault==1?"(默认)":""));
+            ipView.setText(info.ip + (info.isDefeault == 1 ? "(默认)" : ""));
             portView.setText(info.port);
 
         }
@@ -107,7 +107,7 @@ public class MBIPAdapter extends BaseAdapter {
 
             } else if (view.getId() == R.id.delete_tv) {
 
-                MBAlertDialog dialog = new MBAlertDialog(context,R.style.mb_dialog);
+                MBAlertDialog dialog = new MBAlertDialog(context, R.style.mb_dialog);
                 dialog.setConfirmClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -124,7 +124,6 @@ public class MBIPAdapter extends BaseAdapter {
         private void setData(Context context, MBIPInfo info) {
 
             MBIPUtils.getInstance(context).setDefeaultIPPort(info);
-
             Intent resultIntent = new Intent();
             resultIntent.putExtra(MBIPContant.IP, info);
             ((MBIPActivity) context).setResult(MBIPContant.RESULT_CODE, resultIntent);
