@@ -31,7 +31,6 @@ public class IPSetActivity extends Activity {
             }
         });
 
-
         String ip = MBIPUtils.getInstance(this).getIPPort();
 
         if (TextUtils.isEmpty(ip)) {
@@ -39,13 +38,6 @@ public class IPSetActivity extends Activity {
         } else {
             ipView.setText("默认IP地址:" + ip);
         }
-
-        findViewById(R.id.set_btn1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer.parseInt("0.1");
-            }
-        });
 
     }
 
