@@ -1,6 +1,8 @@
 package cn.magicbeans.android.ipmanager.utils;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +16,8 @@ import android.os.Vibrator;
  */
 public class MBShakeUtils implements SensorEventListener {
 
+    private Context mContext;
+
     private SensorManager mSensorManager;
 
     private Sensor mAccelerometerSensor;
@@ -25,6 +29,7 @@ public class MBShakeUtils implements SensorEventListener {
     private OnShakeListener onShakeListener;
 
     public void init(Context context, OnShakeListener onShakeListener) {
+        this.mContext = context;
         this.onShakeListener = onShakeListener;
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         //获取 SensorManager 负责管理传感器
@@ -62,9 +67,26 @@ public class MBShakeUtils implements SensorEventListener {
                     .abs(z) > 17) && !isShake) {
                 isShake = true;
                 if (onShakeListener != null) {
-                    onShakeListener.onShaked();
+
+                    new AlertDialog.Builder(mContext)
+                            .setMessage("是否前往设置IP?")
+                            .setTitle("提示")
+                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    onShakeListener.onConfirm();
+                                }
+                            })
+                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    onShakeListener.onCancled();
+                                }
+                            }).show();
+
                 }
-                vibrator.vibrate(800);
+                vibrator.vibrate(700);
 //                vibrator.vibrate(new long[]{10,500,100,200},2);
                 new Thread() {
                     @Override
@@ -96,7 +118,8 @@ public class MBShakeUtils implements SensorEventListener {
     }
 
     public interface OnShakeListener {
-        void onShaked();
+        void onConfirm();
+        void onCancled();
     }
 
 

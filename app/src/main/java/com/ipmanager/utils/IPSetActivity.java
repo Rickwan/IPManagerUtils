@@ -67,7 +67,7 @@ public class IPSetActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-       initShakeConfige();
+        initShakeConfirm();
     }
 
     @Override
@@ -76,28 +76,18 @@ public class IPSetActivity extends Activity {
         shakeUtils.unRegister();
     }
 
-
-    private void initShakeConfige(){
+    private void initShakeConfirm(){
         shakeUtils = new MBShakeUtils();
         shakeUtils.init(this, new MBShakeUtils.OnShakeListener() {
-            @Override
-            public void onShaked() {
 
-                new AlertDialog.Builder(IPSetActivity.this)
-                        .setMessage("是否前往设置IP?")
-                        .setTitle("提示")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                setIP();
-                            }
-                        })
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        }).show();
+            @Override
+            public void onConfirm() {
+                setIP();
+            }
+
+            @Override
+            public void onCancled() {
+
             }
         });
     }

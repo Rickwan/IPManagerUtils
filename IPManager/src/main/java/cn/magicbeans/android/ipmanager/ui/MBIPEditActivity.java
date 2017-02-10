@@ -56,7 +56,6 @@ public class MBIPEditActivity extends Activity implements View.OnClickListener {
         }
 
 
-
     }
 
     @Override
@@ -64,7 +63,7 @@ public class MBIPEditActivity extends Activity implements View.OnClickListener {
         hideKeyboard();
         if (v.getId() == R.id.mb_commit_tv) {
             commitData();
-        }  else if (v.getId() == R.id.back_iv) {
+        } else if (v.getId() == R.id.back_iv) {
             finish();
         }
 
@@ -88,13 +87,14 @@ public class MBIPEditActivity extends Activity implements View.OnClickListener {
             return;
         }
 
-        MBIPInfo temp=null;
+        MBIPInfo temp = null;
         if (info == null) {
             info = new MBIPInfo(ip, port, 0);
         } else {
-            temp= new MBIPInfo();
+            temp = new MBIPInfo();
             temp.setIp(ip);
             temp.setPort(port);
+            temp.setIsDefeault(info.isDefeault);
         }
 
         if (type == MBIPContant.OPERATE.INSERT.ordinal()) {
