@@ -37,7 +37,8 @@ MBShakeUtils shakeUtils;
     @Override
     protected void onStart() {
         super.onStart();
-        initShakeConfirm();
+	shakeUtils = new MBShakeUtils(this);
+	shakeUtils.init();	
     }
 
     @Override
@@ -46,21 +47,6 @@ MBShakeUtils shakeUtils;
         shakeUtils.unRegister();
     }
 
-    private void initShakeConfirm(){
-        shakeUtils = new MBShakeUtils();
-        shakeUtils.init(this, new MBShakeUtils.OnShakeListener() {
-
-            @Override
-            public void onConfirm() {
-                setIP();
-            }
-
-            @Override
-            public void onCancled() {
-
-            }
-        });
-    }
 ```
 
  - 设置IP：  
