@@ -37,8 +37,8 @@ MBShakeUtils shakeUtils;
     @Override
     protected void onStart() {
         super.onStart();
-	shakeUtils = new MBShakeUtils(this);
-	shakeUtils.init();	
+	      shakeUtils = new MBShakeUtils(this);
+	      shakeUtils.init();	
     }
 
     @Override
@@ -49,7 +49,7 @@ MBShakeUtils shakeUtils;
 
 ```
 
- - 设置IP：  
+- 设置IP：  
  
  ``` 
 Intent intent = new Intent(this, MBIPActivity.class);
@@ -57,14 +57,29 @@ startActivityForResult(intent, MBIPContant.REQUEST_CODE);
 ```
 
 - 获取IP:(返回示例：192.168.1.33:8080)
+ 
+- 方法1：设置成功后，可通过resultCode == MBIPContant.RESULT_CODE在onActivityResult()方法中获取IP,
+ ```
+  @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-  - 方法1：获取IP  
+        if (resultCode == MBIPContant.RESULT_CODE) {
+
+            MBIPInfo info = (MBIPInfo) data.getSerializableExtra(MBIPContant.IP);
+            ipView.setText("新IP地址：" + info.ip + ":" + info.port);
+        }
+    }
+ ```
+ 
+- 方法2：获取已设置的默认IP  
     
     ```
     MBIPUtils.getInstance(context).getIPPort();
     ```
-  - 方法2：当未设置IP时，可传入默认IP  
+- 方法3：当未设置IP时，可传入默认IP  
     
     ```
      MBIPUtils.getInstance(context).getIPPort(defeaultIP,defeaultPort);
     ```
+    
