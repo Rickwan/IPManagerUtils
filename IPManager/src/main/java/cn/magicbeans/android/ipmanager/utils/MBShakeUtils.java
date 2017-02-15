@@ -1,13 +1,20 @@
 package cn.magicbeans.android.ipmanager.utils;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Vibrator;
+
+import java.lang.ref.Reference;
+import java.lang.ref.SoftReference;
+
+import cn.magicbeans.android.ipmanager.ui.MBIPActivity;
 
 /**
  * author 万强
@@ -16,7 +23,7 @@ import android.os.Vibrator;
  */
 public class MBShakeUtils implements SensorEventListener {
 
-    private Context mContext;
+    private Activity mContext;
 
     private SensorManager mSensorManager;
 
@@ -26,14 +33,16 @@ public class MBShakeUtils implements SensorEventListener {
 
     private boolean isShake;
 
-    private OnShakeListener onShakeListener;
+    public MBShakeUtils(Activity activity) {
 
-    public void init(Context context, OnShakeListener onShakeListener) {
-        this.mContext = context;
-        this.onShakeListener = onShakeListener;
-        vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        this.mContext = activity;
+    }
+
+    public void init() {
+
+        vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         //获取 SensorManager 负责管理传感器
-        mSensorManager = ((SensorManager) context.getSystemService(Context.SENSOR_SERVICE));
+        mSensorManager = ((SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE));
         if (mSensorManager != null) {
             //获取加速度传感器
             mAccelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -44,6 +53,7 @@ public class MBShakeUtils implements SensorEventListener {
     }
 
     public void unRegister() {
+
         if (mSensorManager != null) {
             mSensorManager.unregisterListener(this);
         }
@@ -51,6 +61,8 @@ public class MBShakeUtils implements SensorEventListener {
         if (vibrator != null) {
             vibrator.cancel();
         }
+
+
     }
 
     @Override
@@ -66,26 +78,8 @@ public class MBShakeUtils implements SensorEventListener {
             if ((Math.abs(x) > 17 || Math.abs(y) > 17 || Math
                     .abs(z) > 17) && !isShake) {
                 isShake = true;
-                if (onShakeListener != null) {
 
-                    new AlertDialog.Builder(mContext)
-                            .setMessage("是否前往设置IP?")
-                            .setTitle("提示")
-                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    onShakeListener.onConfirm();
-                                }
-                            })
-                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                    onShakeListener.onCancled();
-                                }
-                            }).show();
-
-                }
+                showConfirmDialog();
                 vibrator.vibrate(700);
 //                vibrator.vibrate(new long[]{10,500,100,200},2);
                 new Thread() {
@@ -117,9 +111,26 @@ public class MBShakeUtils implements SensorEventListener {
 
     }
 
-    public interface OnShakeListener {
-        void onConfirm();
-        void onCancled();
+
+    private void showConfirmDialog() {
+        new AlertDialog.Builder(mContext)
+                .setMessage("是否前往设置IP?")
+                .setTitle("提示")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(mContext, MBIPActivity.class);
+                        mContext.startActivityForResult(intent, MBIPContant.REQUEST_CODE);
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+
+                    }
+                }).show();
     }
 
 

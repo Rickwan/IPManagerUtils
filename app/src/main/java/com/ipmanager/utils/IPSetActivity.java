@@ -1,14 +1,11 @@
 package com.ipmanager.utils;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import cn.magicbeans.android.ipmanager.module.MBIPInfo;
 import cn.magicbeans.android.ipmanager.ui.MBIPActivity;
@@ -57,17 +54,17 @@ public class IPSetActivity extends Activity {
 
             MBIPInfo info = (MBIPInfo) data.getSerializableExtra(MBIPContant.IP);
             ipView.setText("新IP地址：" + info.ip + ":" + info.port);
-
-
         }
     }
 
-    MBShakeUtils shakeUtils;
+
+    MBShakeUtils shakeUtils ;
 
     @Override
     protected void onStart() {
         super.onStart();
-        initShakeConfirm();
+        shakeUtils = new MBShakeUtils(this);
+        shakeUtils.init();
     }
 
     @Override
@@ -76,19 +73,5 @@ public class IPSetActivity extends Activity {
         shakeUtils.unRegister();
     }
 
-    private void initShakeConfirm(){
-        shakeUtils = new MBShakeUtils();
-        shakeUtils.init(this, new MBShakeUtils.OnShakeListener() {
 
-            @Override
-            public void onConfirm() {
-                setIP();
-            }
-
-            @Override
-            public void onCancled() {
-
-            }
-        });
-    }
 }
