@@ -40,6 +40,11 @@ public class IPSetActivity extends Activity {
             ipView.setText("默认IP地址:" + ip);
         }
 
+        Log.i("tag","1");
+        Log.i("tag","2");
+        Log.i("tag","3");
+        Log.i("tag","4");
+
     }
 
     private void setIP() {
