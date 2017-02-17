@@ -39,7 +39,6 @@ public class IPSetActivity extends Activity {
         } else {
             ipView.setText("默认IP地址:" + ip);
         }
-        Log.i("tag","tag");
 
     }
 
