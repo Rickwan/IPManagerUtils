@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -38,6 +39,7 @@ public class IPSetActivity extends Activity {
         } else {
             ipView.setText("默认IP地址:" + ip);
         }
+        Log.i("tag","tag");
 
     }
 
