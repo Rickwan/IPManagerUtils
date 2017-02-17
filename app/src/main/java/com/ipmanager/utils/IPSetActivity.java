@@ -41,9 +41,6 @@ public class IPSetActivity extends Activity {
         }
 
         Log.i("tag","1");
-        Log.i("tag","2");
-        Log.i("tag","3");
-        Log.i("tag","4");
 
     }
 
