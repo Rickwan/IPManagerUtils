@@ -29,9 +29,13 @@ public class MBShakeUtils implements SensorEventListener {
 
     private Sensor mAccelerometerSensor;
 
-    private Vibrator vibrator;
+    private Vibrator mVibrator;
 
-    private boolean isShake;
+    private boolean isShown;
+
+    private long mShakeTime;
+
+    private int mShakeCount;
 
     public MBShakeUtils(Activity activity) {
 
@@ -40,7 +44,7 @@ public class MBShakeUtils implements SensorEventListener {
 
     public void init() {
 
-        vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         //获取 SensorManager 负责管理传感器
         mSensorManager = ((SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE));
         if (mSensorManager != null) {
@@ -58,8 +62,8 @@ public class MBShakeUtils implements SensorEventListener {
             mSensorManager.unregisterListener(this);
         }
 
-        if (vibrator != null) {
-            vibrator.cancel();
+        if (mVibrator != null) {
+            mVibrator.cancel();
         }
 
 
@@ -76,11 +80,21 @@ public class MBShakeUtils implements SensorEventListener {
             float z = values[2];
 
             if ((Math.abs(x) > 17 || Math.abs(y) > 17 || Math
-                    .abs(z) > 17) && !isShake) {
-                isShake = true;
+                    .abs(z) > 17) && !isShown) {
 
+                if (System.currentTimeMillis() - mShakeTime > 2000) {
+                    mShakeCount = 0;
+                } else {
+                    mShakeCount++;
+                }
+                mShakeTime = System.currentTimeMillis();
+
+                if (mShakeCount < 3) {
+                    return;
+                }
+                isShown = true;
                 showConfirmDialog();
-                vibrator.vibrate(700);
+                mVibrator.vibrate(700);
 //                vibrator.vibrate(new long[]{10,500,100,200},2);
                 new Thread() {
                     @Override
@@ -95,7 +109,6 @@ public class MBShakeUtils implements SensorEventListener {
 //                            mHandler.obtainMessage(AGAIN_SHAKE).sendToTarget();
 //                            Thread.sleep(500);
 //                            mHandler.obtainMessage(END_SHAKE).sendToTarget();
-                            isShake = false;
 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -119,7 +132,7 @@ public class MBShakeUtils implements SensorEventListener {
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        reset();
                         Intent intent = new Intent(mContext, MBIPActivity.class);
                         mContext.startActivityForResult(intent, MBIPContant.REQUEST_CODE);
                     }
@@ -128,9 +141,15 @@ public class MBShakeUtils implements SensorEventListener {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-
+                        reset();
                     }
                 }).show();
+    }
+
+
+    private void reset(){
+        mShakeCount=0;
+        isShown = false;
     }
 
 
