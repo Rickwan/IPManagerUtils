@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import cn.magicbeans.android.ipmanager.module.MBIPInfo;
 import cn.magicbeans.android.ipmanager.ui.MBIPActivity;
+import cn.magicbeans.android.ipmanager.utils.FloatWindowUtils;
 import cn.magicbeans.android.ipmanager.utils.MBIPContant;
 import cn.magicbeans.android.ipmanager.utils.MBIPUtils;
 import cn.magicbeans.android.ipmanager.utils.MBShakeUtils;
@@ -40,7 +40,9 @@ public class IPSetActivity extends Activity {
             ipView.setText("默认IP地址:" + ip);
         }
 
-        Log.i("tag","1");
+
+        FloatWindowUtils floatWindowUtils= new FloatWindowUtils();
+        floatWindowUtils.init(this);
 
     }
 
@@ -61,19 +63,19 @@ public class IPSetActivity extends Activity {
     }
 
 
-    MBShakeUtils shakeUtils ;
+
 
     @Override
     protected void onStart() {
         super.onStart();
-        shakeUtils = new MBShakeUtils(this);
-        shakeUtils.init();
+        MBShakeUtils.getInstance(this).init();
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        shakeUtils.unRegister();
+        MBShakeUtils.getInstance(this).unRegister();
     }
 
 

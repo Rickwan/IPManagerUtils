@@ -2,94 +2,85 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/wanqiang/Documents/SoftWare/adt-bundle-mac-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
         optimize="true"
-        revision="23.0.3"
-        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.0_391ebd3fff0b4c127bdb019e58bebe5f54ebc70d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.1_bb1e679eabeaa431e587f61fb6eac3a6cc2260d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.1_56260f63df06f4ef2a29ea3ba0f8f330b458c89b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_3a05dda03d420420d9c9347f8be1ae9ac4fd0267/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.1_ee84fa791b9098edf48f75196a93a89ff8eac80c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.1_e3eafc115a0e5099cb66c00ca76af4bf0995b144/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="2cbc342b13eb592075f085ae23d5d7d8435e0d9b">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b7feabcf6b1574e9858e330d5fe2f3047e1c7fc5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.0_cea6bc009fc648e98f1869412b5ef3d6e1087eb9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
+        revision="25.0.0"
         sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_2ea2d8bb5f3c5490418293dbf2f09c44df105365/classes.dex" />
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_6bb15228af0d038000ca1873abd732b5b32c4a9e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/49b5652694095a7a3edca62cebe62f360a5f0e3c/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="23.0.3"
-        sha1="6f0e434420a5863cd3ed81c478387120ac80ce7a">
-        <dex dex="/Users/MagicBeans/WorkSpace/Rickwan/IPManagerUtils/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9c51cbff2e39be947e2857eeaa6aa1965e47ef40/classes.dex" />
+        revision="25.0.0"
+        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_fafbb86d05967d5910522fcb5d6987beb6d799e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/2c5c475b8043c1dc8a07e09375bfc09786d04d4f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_6201f28beac38752fc0473a8976a40dcb056ab22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/3d809119be540f55eaac0df8df3ebe6cf296e9f1/output/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_1dbc24de1d39fbde4c2cf429dd9a082039225a12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/fd93b3bd8546607c3a0c8914dfc3b978a3703a04/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_1ec2660dfc7b8fedac444452233d6fee41a83f53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/3d809119be540f55eaac0df8df3ebe6cf296e9f1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_167e009566c7a4bec6b719f44b8aec23e45d30d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/81ce6bd537e55f65f86fa33851369fc45f196afd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_772381bfded9cf627d3bb92a5c97177b9ec2e0d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/.android/build-cache/30bb6e6f7e3813a2cad0b6c5edd4f5b65cb5b350/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_8b5ec01a3e7a507ac0e1f30958b4267c548923ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wanqiang/WorkSpace/IPManagerUtils/IPManager/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="21346c1b08d1452e4fd72b96ce31244652232b51">
+        <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_b682e7d18baa5b2e267dcb16ef4d6a67debca3b5.jar" />
     </item>
 
 </items>

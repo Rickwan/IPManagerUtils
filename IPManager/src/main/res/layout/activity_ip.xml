@@ -7,9 +7,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="3dp"
+        android:background="@color/mb_title_bg"
         android:paddingBottom="3dp"
-        android:background="@color/mb_title_bg">
+        android:paddingTop="3dp">
 
         <ImageView
             android:id="@+id/back_iv"
@@ -33,18 +33,20 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="添加"
             android:padding="10dp"
+            android:text="添加"
             android:textColor="@color/mb_white"
             android:textSize="13sp" />
     </RelativeLayout>
 
 
+
+
     <ListView
         android:id="@+id/ip_list_view"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="10dp">
 
