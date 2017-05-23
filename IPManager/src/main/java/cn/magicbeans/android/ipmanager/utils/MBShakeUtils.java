@@ -77,6 +77,12 @@ public class MBShakeUtils implements SensorEventListener {
         }
 
 
+        if (reference!=null){
+            reference.clear();
+        }
+
+        mbShakeUtils = null;
+
     }
 
     @Override
@@ -105,26 +111,7 @@ public class MBShakeUtils implements SensorEventListener {
                 isShown = true;
                 showConfirmDialog();
                 mVibrator.vibrate(700);
-//                vibrator.vibrate(new long[]{10,500,100,200},2);
-                new Thread() {
-                    @Override
-                    public void run() {
-                        super.run();
-                        try {
 
-                            //开始震动 发出提示音 展示动画效果
-//                            mHandler.obtainMessage(START_SHAKE).sendToTarget();
-                            Thread.sleep(500);
-                            //再来一次震动提示
-//                            mHandler.obtainMessage(AGAIN_SHAKE).sendToTarget();
-//                            Thread.sleep(500);
-//                            mHandler.obtainMessage(END_SHAKE).sendToTarget();
-
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }.start();
             }
         }
     }
@@ -158,6 +145,7 @@ public class MBShakeUtils implements SensorEventListener {
 
 
     private void reset() {
+
         mShakeCount = 0;
         isShown = false;
     }

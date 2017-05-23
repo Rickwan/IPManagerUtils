@@ -79,7 +79,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="21346c1b08d1452e4fd72b96ce31244652232b51">
+        sha1="f6deff400ccf1cd5ec1f872a3614024f00ae03b6">
         <dex dex="/Users/wanqiang/WorkSpace/IPManagerUtils/app/build/intermediates/pre-dexed/debug/classes_b682e7d18baa5b2e267dcb16ef4d6a67debca3b5.jar" />
     </item>
 
