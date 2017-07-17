@@ -32,19 +32,26 @@
 在需要使用摇一摇功能的Activity的onStart()方法中注册、在onStop()方法中取消注册摇一摇功能。
 
 ```
-MBShakeUtils shakeUtils;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FloatWindowUtils floatWindowUtils= new FloatWindowUtils();
+        floatWindowUtils.init(this);
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-	      shakeUtils = new MBShakeUtils(this);
-	      shakeUtils.init();	
+	MBShakeUtils.getInstance(this).init();
+		
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        shakeUtils.unRegister();
+	MBShakeUtils.getInstance(this).unRegister();
+      
     }
 
 ```
