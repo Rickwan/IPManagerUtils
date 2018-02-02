@@ -1,7 +1,6 @@
 package cn.magicbeans.android.ipmanager.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class MBIPUtils {
     private MBIPDao ipDao;
 
 
-    public MBIPUtils(Context context) {
+    private MBIPUtils(Context context) {
         ipDao = new MBIPDao(context);
     }
 
@@ -117,5 +116,29 @@ public class MBIPUtils {
             return null;
         }
         return info.ip + ":" + info.port;
+    }
+
+    /**
+     * 获取IP
+     * @return
+     */
+    public String getIP() {
+        MBIPInfo info = ipDao.queryDefeaultIPInfo();
+        if (info == null) {
+            return null;
+        }
+        return info.ip;
+    }
+
+    /**
+     * 获取端口
+     * @return
+     */
+    public String getPort() {
+        MBIPInfo info = ipDao.queryDefeaultIPInfo();
+        if (info == null) {
+            return null;
+        }
+        return info.port;
     }
 }

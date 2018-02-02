@@ -36,6 +36,12 @@ public class MBIPContant {
      */
     public final static  String  IS_DEFEAULT = "isDefeault";
 
+
+    /**
+     * 是否为域名
+     */
+    public final static  String  IS_DOMAIN = "isDomain";
+
     /**
      * 数据操作
      */

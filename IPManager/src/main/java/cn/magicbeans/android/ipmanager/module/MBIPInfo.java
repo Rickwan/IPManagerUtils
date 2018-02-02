@@ -22,6 +22,8 @@ public class MBIPInfo implements Serializable{
      */
     public int isDefeault;
 
+
+
     public MBIPInfo(){}
 
     public MBIPInfo(String ip, String port){
@@ -34,6 +36,7 @@ public class MBIPInfo implements Serializable{
         this.port = port;
         this.isDefeault= isDefeault;
     }
+
 
     public String getIp() {
         return ip;
